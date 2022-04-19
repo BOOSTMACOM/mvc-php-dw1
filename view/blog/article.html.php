@@ -3,7 +3,7 @@
 <a class="text-info" href="javascript://" onclick="history.back();">Retourner en arrière</a>
 <p><?= $article['content'] ?></p>
 
-<h2>Commentaires</h2>
+<h2 class="comments">Commentaires</h2>
 <?php foreach($comment as $key) : ?>
 <p><span class="author"><?= $key['author'] ?></span><br>
 <?= $key['content'] ?> <span class="creation">(<?= $key['created_at'] ?>)</span></p> 

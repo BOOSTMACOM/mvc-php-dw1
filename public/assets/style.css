@@ -39,7 +39,8 @@ ul
     gap: 15px;
 }
 
-li
+
+li 
 {
     list-style: none;
 }
@@ -47,4 +48,10 @@ li
 .blog-prog
 {
     text-decoration: underline;
+}
+
+.comments
+{
+    text-decoration: underline;
+    font-style: italic;
 }
