@@ -1,5 +1,5 @@
 <?php include '../view/partials/_top.html.php' ?>
-<h1>Ajout d'un commentaire</h1>
+<h1 class="text-primary">Ajout d'un commentaire</h1>
 
 <form action="" method="POST">
 

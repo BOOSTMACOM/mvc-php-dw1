@@ -21,3 +21,30 @@ p span.creation
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.blog
+{
+    width: 65%;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+ul
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+li
+{
+    list-style: none;
+}
+
+.blog-prog
+{
+    text-decoration: underline;
+}

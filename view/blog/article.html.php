@@ -1,5 +1,5 @@
 <?php include '../view/partials/_top.html.php' ?>
-<h1 class="text-center"><?= $article['title'] ?></h1>
+<h1 class="text-center text-primary"><?= $article['title'] ?></h1>
 <p><?= $article['content'] ?></p>
 
 <h2>Commentaires</h2>
