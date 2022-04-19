@@ -8,6 +8,11 @@ footer
     background: #1b1b1b;
 }
 
+body
+{
+    background: linear-gradient(90deg, #ffffff 0%, #d8d8d8 100%);
+}
+
 p span.author
 {
     font-weight: bold;
@@ -17,14 +22,15 @@ p span.author
 p span.creation
 {
     font-style: italic;
-    font-weight: 0.7em;
-    font-weight: bold;
+    font-size: 0.8em;
+    font-weight: lighter;
     text-transform: uppercase;
 }
 
 .blog
 {
-    width: 65%;
+    margin-top: 210px;
+    width: 25%;
 }
 
 a
@@ -48,6 +54,8 @@ li
 .blog-prog
 {
     text-decoration: underline;
+    text-decoration-color: #1f1ff5;
+    -moz-text-decoration-color: blue;
 }
 
 .comments
@@ -61,4 +69,17 @@ li
     display: flex;
     flex-direction: row;
     gap: 15px;
+}
+
+.art
+{
+    font-size: 1.5em;
+}
+
+p span.content
+{
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
