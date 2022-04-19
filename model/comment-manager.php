@@ -36,6 +36,20 @@ function getCommentById(int $id)
     return $query->fetchAll();
 }
 
+function getCommentaireById(int $id)
+{
+    $pdo = $GLOBALS['pdo'];
+
+    $sql = "SELECT * FROM " . TABLE2 . " WHERE id = :id";
+    $query = $pdo->prepare($sql);
+    $query->execute([
+        'id' => $id
+    ]);
+
+    return $query->fetch();
+}
+
+
 function addComment(string $content, string $author, int $article_id)
 {
     $pdo = $GLOBALS['pdo'];
@@ -55,13 +69,11 @@ function deleteComment(int $id)
 {
     $pdo = $GLOBALS['pdo'];
 
-    $sql = "DELETE FROM " . TABLE2 . "WHERE id = :id";
+    $sql = "DELETE FROM " . TABLE2 . " WHERE id = :id";
     $query = $pdo->prepare($sql);
     $query->execute([
         'id' => $id,
     ]);
-
-    return $query->fetch();
 }
 
 

@@ -63,5 +63,16 @@ function updateArticle(string $title, string $content, int $id)
     ]);
 }
 
+function deleteArt(int $id)
+{
+    $pdo = $GLOBALS['pdo'];
+
+    $sql = "DELETE FROM " . TABLE . " WHERE id = :id";
+    $query = $pdo->prepare($sql);
+    $query->execute([
+        'id' => $id,
+    ]);
+}
+
 
 // etc...

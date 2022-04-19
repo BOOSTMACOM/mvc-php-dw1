@@ -24,5 +24,32 @@ function update()
     {
         $article = updateArticle($_POST['title'],$_POST['content'],$_GET['id']);
         header('Location: /?controller=admin'); exit;
+        }
+}
+
+
+function deleteCommentaire()
+{
+    $commentaire = getCommentaireById(intval($_GET['id']));
+    include '../view/admin/delete-comment.html.php';
+
+    if(isset($_POST['submit']))
+    {
+        $commentaire = deleteComment(intval($_GET['id']));
+        header('Location: /?controller=admin'); exit;
     }
+
+}
+
+function deleteArticle()
+{
+    $article = getById(intval($_GET['id']));
+    include '../view/admin/delete-article.html.php';
+
+    if(isset($_POST['submit']))
+    {
+        $article = deleteArt(intval($_GET['id']));
+        header('Location: /?controller=admin'); exit;
+    }
+
 }

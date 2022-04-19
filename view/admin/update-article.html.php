@@ -1,7 +1,9 @@
 <?php include '../view/partials/_top.html.php' ?>
 <a class="text-info" href="javascript://" onclick="history.back();">Retourner en arrière</a>
-<h1 class="text-primary">Modification d'un article</h1>
+<br>
+<br>
 
+<h1 class="text-primary">Modification d'un article</h1>
 <form action="" method="POST">
 
 <label for="title">Titre de l'article</label>
