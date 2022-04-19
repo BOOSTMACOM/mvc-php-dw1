@@ -50,4 +50,18 @@ function addArticle(string $title, string $content)
     return $query->fetch();
 }
 
+function updateArticle(string $title, string $content, int $id)
+{
+    $pdo = $GLOBALS['pdo'];
+
+    $sql = "UPDATE " . TABLE . " SET title = :title,content = :content WHERE id = :id";
+    $query = $pdo->prepare($sql);
+    $query->execute([
+        'title' => $title,
+        'content' => $content,
+        'id' => $id,
+    ]);
+}
+
+
 // etc...

@@ -14,3 +14,15 @@ function index()
 
     include '../view/admin/index.html.php';
 }
+
+function update()
+{
+    $article = getById($_GET['id']);
+    include '../view/admin/update-article.html.php';
+    
+    if(isset($_POST['submit']))
+    {
+        $article = updateArticle($_POST['title'],$_POST['content'],$_GET['id']);
+        header('Location: /?controller=admin'); exit;
+    }
+}

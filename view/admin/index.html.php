@@ -22,7 +22,7 @@
             <td><?= $article['content'] ?></td>
             <td><?= $article['created_at'] ?></td>
             <td>
-                <a href="/">Modifier</a>
+                <a href="/?controller=admin&action=update&id=<?= $article['id'] ?>">Modifier</a>
                 <a href="/">Supprimer</a>
             </td>
         </tbody>
