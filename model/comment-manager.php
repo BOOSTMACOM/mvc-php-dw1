@@ -33,7 +33,7 @@ function getCommentById(int $id)
         'id' => $id
     ]);
 
-    return $query->fetch();
+    return $query->fetchAll();
 }
 
 function addComment(string $content, string $author, int $article_id)

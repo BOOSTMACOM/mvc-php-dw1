@@ -19,6 +19,7 @@ function article()
     if(!empty($_GET['id']))
     {
         $article = getById($_GET['id']);
+        $comment = getCommentById($_GET['id']);
         include '../view/blog/article.html.php';
     }
     else

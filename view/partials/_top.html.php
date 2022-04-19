@@ -7,3 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+
+<nav>
+    <ul>
+        <li><a href="/">Accueil</a></li> 
+        <li><a href="/?controller=blog">Blog</a></li>
+    </ul>
+</nav>
