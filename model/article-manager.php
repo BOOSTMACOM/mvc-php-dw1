@@ -36,4 +36,18 @@ function getById(int $id)
     return $query->fetch();
 }
 
+function addArticle(string $title, string $content)
+{
+    $pdo = $GLOBALS['pdo'];
+
+    $sql = "INSERT INTO " . TABLE . " (title,content,created_at) VALUES (:title,:content,NOW())";
+    $query = $pdo->prepare($sql);
+    $query->execute([
+        'title' => $title,
+        'content' => $content,
+    ]);
+
+    return $query->fetch();
+}
+
 // etc...

@@ -26,6 +26,10 @@ function article()
     {
         header('Location: /'); exit;
     }
+    if(!empty($_GET['add']))
+    {
+        echo 'lol';
+    }
 }
 
 function comment()
@@ -39,6 +43,15 @@ function comment()
             $comment = addComment($_POST['content'],$_POST['author'],$_GET['id']);
             header('Location: /?controller=blog'); exit;
         }
-
 }
 
+function addArticles()
+{
+    include '../view/blog/add-article.html.php';
+    if(!empty($_POST['submit']))
+    {
+        $article = addArticle($_POST['title'],$_POST['content']);
+        header('Location: /?controller=blog'); exit;
+    }
+
+}
