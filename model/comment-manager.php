@@ -51,4 +51,18 @@ function addComment(string $content, string $author, int $article_id)
     return $query->fetch();
 }
 
+function deleteComment(int $id)
+{
+    $pdo = $GLOBALS['pdo'];
+
+    $sql = "DELETE FROM " . TABLE2 . "WHERE id = :id";
+    $query = $pdo->prepare($sql);
+    $query->execute([
+        'id' => $id,
+    ]);
+
+    return $query->fetch();
+}
+
+
 // etc...

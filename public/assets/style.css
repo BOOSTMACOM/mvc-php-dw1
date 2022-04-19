@@ -1,0 +1,23 @@
+footer
+{
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background: #1b1b1b;
+}
+
+p span.author
+{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+p span.creation
+{
+    font-style: italic;
+    font-weight: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}

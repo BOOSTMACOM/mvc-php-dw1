@@ -37,6 +37,7 @@ function comment()
     if(!empty($_POST['submit']))
         {
             $comment = addComment($_POST['content'],$_POST['author'],$_GET['id']);
+            header('Location: /?controller=blog'); exit;
         }
 
 }
