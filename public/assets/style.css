@@ -55,3 +55,10 @@ li
     text-decoration: underline;
     font-style: italic;
 }
+
+.gestion-admin
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}

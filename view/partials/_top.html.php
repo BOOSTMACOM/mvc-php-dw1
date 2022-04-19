@@ -14,6 +14,7 @@
     <ul>
         <li><a class="text-secondary" href="/">Accueil</a></li> 
         <li><a class="text-secondary" href="/?controller=blog">Blog</a></li>
+        <li><a class="text-secondary" href="/?controller=admin">Admin</a></li>
     </ul>
 </nav>
 <div class="container">
