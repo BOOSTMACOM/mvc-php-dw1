@@ -1,6 +1,7 @@
 <?php
 
 require '../model/article-manager.php';
+require '../model/comment-manager.php';
 
 /**
  * Affichage de la page d'accueil du blog (tous les articles)
@@ -28,6 +29,14 @@ function article()
 
 function comment()
 {
-    include '../view/blog/comment.html.php';
+    if(!empty($_GET['id']))
+    {        
+        include '../view/blog/comment.html.php'; 
+    }
+    if(!empty($_POST['submit']))
+        {
+            $comment = addComment($_POST['content'],$_POST['author'],$_GET['id']);
+        }
+
 }
 
