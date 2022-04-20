@@ -1,5 +1,5 @@
 <?php include '../view/partials/_top.html.php'; ?>
-<a class="text-primary" href="javascript://" onclick="history.back();">Retourner en arrière</a>
+<a class="text-primary goback" href="javascript://" onclick="history.back();">Retourner en arrière</a>
 <br>
 <br>
 
@@ -7,11 +7,11 @@
 <form action="" method="POST">
 
 <label for="title">Titre de l'article</label>
-<input type="text" name="title" value="<?= $article['title'] ?>">
+<input class="text-center" type="text" name="title" size="35" value="<?= $article['title'] ?>">
 <br>
 <label for="content">Contenu de l'article</label>
 <br>
-<textarea name="content" cols="30" rows="10"><?= $article['content'] ?></textarea>
+<textarea name="content" size="35" cols="40" rows="25"><?= $article['content'] ?></textarea>
 <br>
 <br>
 

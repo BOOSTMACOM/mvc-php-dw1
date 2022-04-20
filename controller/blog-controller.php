@@ -38,10 +38,19 @@ function comment()
     {        
         include '../view/blog/comment.html.php'; 
     }
-    if(!empty($_POST['submit']))
+    if(!empty($_POST['submit'])) 
         {
+            if(isset($_POST['anonymous']))
+            {
+                $user = '(ANONYME)';
+                $comment = addComment($_POST['content'],$user,$_GET['id']);
+                header('Location: /?controller=blog'); exit;
+            }
+            else
+            {
             $comment = addComment($_POST['content'],$_POST['author'],$_GET['id']);
             header('Location: /?controller=blog'); exit;
+            }
         }
 }
 

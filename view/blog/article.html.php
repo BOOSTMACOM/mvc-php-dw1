@@ -1,5 +1,5 @@
 <?php include '../view/partials/_top.html.php' ?>
-<a class="text-primary text-right" href="javascript://" onclick="history.back();">Retourner en arrière</a>
+<a class="text-primary goback" href="javascript://" onclick="history.back();">Retourner en arrière</a>
 <h1 class="text-center text-secondary"><?= $article['title'] ?></h1>
 
 <div class="imagearticle">
