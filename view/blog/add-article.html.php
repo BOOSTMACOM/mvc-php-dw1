@@ -1,4 +1,5 @@
 <?php include '../view/partials/_top.html.php' ?>
+<a class="text-info" href="javascript://" onclick="history.back();">Retourner en arrière</a>
 <h1 class="text-primary">Ajout d'un nouvel article</h1>
 
 <form action="" method="POST">

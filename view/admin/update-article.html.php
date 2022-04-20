@@ -1,4 +1,4 @@
-<?php include '../view/partials/_top.html.php' ?>
+<?php include '../view/partials/_top.html.php'; ?>
 <a class="text-info" href="javascript://" onclick="history.back();">Retourner en arrière</a>
 <br>
 <br>
@@ -18,4 +18,4 @@
 <input type="submit" name="submit" value="Envoyer">
 
 </form>
-<?php include '../view/partials/_bottom.html.php' ?>
+<?php include '../view/partials/_bottom.html.php'; ?>
