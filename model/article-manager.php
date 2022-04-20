@@ -1,78 +1,63 @@
 <?php
 
-define('TABLE', 'article');
 
-try
+class ArticleManager extends Manager
 {
-    $pdo = new PDO('mysql:host=localhost;dbname=mvc-blog','root','', [
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
+    public const TABLE = "article";
 
+    public function getAllArticle()
+    {
+        $sql = "SELECT * FROM " . self::TABLE;
+        $query = $this->getPdo()->query($sql);
+        return $query->fetchAll();
+    }
+
+    public function getArticleById(int $id)
+    {
+
+        $sql = "SELECT * FROM " . self::TABLE . " WHERE id = :id";
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute([
+            'id' => $id
+        ]);
+
+        return $query->fetch();
+    }
+
+    public function insertArticle(string $title, string $content)
+    {
+
+        $sql = "INSERT INTO " . self::TABLE . " (title,content,created_at) VALUES (:title,:content,NOW())";
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute([
+            'title' => $title,
+            'content' => $content,
+        ]);
+
+        return $query->fetch();
+    }
+
+    public function updateArticle(string $title, string $content, int $id)
+    {
+
+        $sql = "UPDATE " . self::TABLE . " SET title = :title,content = :content WHERE id = :id";
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute([
+            'title' => $title,
+            'content' => $content,
+            'id' => $id,
+        ]);
+    }
+
+    public function deleteArticle(int $id)
+    {
+
+        $sql = "DELETE FROM " . self::TABLE . " WHERE id = :id";
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute([
+            'id' => $id,
+        ]);
+    }
 }
-catch(PDOException $pe)
-{
-    die("Error : " . $pe->getMessage());
-}
-
-function getAll()
-{
-    $pdo = $GLOBALS['pdo'];
-
-    $sql = "SELECT * FROM " . TABLE;
-    $query = $pdo->query($sql);
-    return $query->fetchAll();
-}
-
-function getById(int $id)
-{
-    $pdo = $GLOBALS['pdo'];
-
-    $sql = "SELECT * FROM " . TABLE . " WHERE id = :id";
-    $query = $pdo->prepare($sql);
-    $query->execute([
-        'id' => $id
-    ]);
-
-    return $query->fetch();
-}
-
-function addArticle(string $title, string $content)
-{
-    $pdo = $GLOBALS['pdo'];
-
-    $sql = "INSERT INTO " . TABLE . " (title,content,created_at) VALUES (:title,:content,NOW())";
-    $query = $pdo->prepare($sql);
-    $query->execute([
-        'title' => $title,
-        'content' => $content,
-    ]);
-
-    return $query->fetch();
-}
-
-function updateArticle(string $title, string $content, int $id)
-{
-    $pdo = $GLOBALS['pdo'];
-
-    $sql = "UPDATE " . TABLE . " SET title = :title,content = :content WHERE id = :id";
-    $query = $pdo->prepare($sql);
-    $query->execute([
-        'title' => $title,
-        'content' => $content,
-        'id' => $id,
-    ]);
-}
-
-function deleteArt(int $id)
-{
-    $pdo = $GLOBALS['pdo'];
-
-    $sql = "DELETE FROM " . TABLE . " WHERE id = :id";
-    $query = $pdo->prepare($sql);
-    $query->execute([
-        'id' => $id,
-    ]);
-}
-
 
 // etc...

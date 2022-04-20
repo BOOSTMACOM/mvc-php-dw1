@@ -5,12 +5,12 @@
 <form action="" method="POST">
 
 <label for="title">Quel est le nom de l'article?</label>
-<input class="text-center" type="text" size="45" name="title">
+<input class="text-center" type="text" size="45" name="title" required>
 <br>
 <br>
 <label for="content">Quel est le contenu de l'article?</label>
 <br>
-<textarea name="content" cols="50" rows="20"></textarea>
+<textarea name="content" cols="50" rows="20" required></textarea>
 <br>
 <br>
 

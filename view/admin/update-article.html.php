@@ -1,5 +1,4 @@
 <?php include '../view/partials/_top.html.php'; ?>
-<a class="text-primary goback" href="javascript://" onclick="history.back();">Retourner en arrière</a>
 <br>
 <br>
 

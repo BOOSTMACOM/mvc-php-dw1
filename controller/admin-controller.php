@@ -1,41 +1,51 @@
 <?php
 
-require '../model/article-manager.php';
-require '../model/comment-manager.php';
 
-/**
- * Affichage de la page d'accueil admin (tous les articles,tout les commentaires + CRUD)
- * @return [type]
- */
+
 function index()
 {
-    $articles = getAll();
-    $comments = getAllComments();
+    require '../model/manager.php';
+
+    require_once '../model/article-manager.php';
+    $articleManager = new ArticleManager();
+    $articles = $articleManager->getAllArticle();
+
+    require_once '../model/comment-manager.php';
+    $commentManager = new CommentManager();
+    $comments = $commentManager->getAllComment();
 
     include '../view/admin/index.html.php';
 }
 
 function update()
 {
-    $article = getById($_GET['id']);
+    require '../model/manager.php';
+    require_once '../model/article-manager.php';
+    $articleManager = new ArticleManager;
+    $article = $articleManager->getArticleById($_GET['id']);
+    
     include '../view/admin/update-article.html.php';
     
     if(isset($_POST['submit']))
     {
-        $article = updateArticle($_POST['title'],$_POST['content'],$_GET['id']);
-        header('Location: /?controller=admin'); exit;
+        $article = $articleManager->updateArticle($_POST['title'],$_POST['content'],$_GET['id']);
+        header('Location: /?controller=admin');
+
         }
 }
 
 
 function deleteCommentaire()
 {
-    $commentaire = getCommentaireById(intval($_GET['id']));
+    require '../model/manager.php';
+    require_once '../model/comment-manager.php';
+    $commentManager = new CommentManager(); 
+    $commentaire = $commentManager->getCommentById(intval($_GET['id']));
     include '../view/admin/delete-comment.html.php';
 
     if(isset($_POST['submit']))
     {
-        $commentaire = deleteComment(intval($_GET['id']));
+        $commentaire = $commentManager->deleteComment(intval($_GET['id']));
         header('Location: /?controller=admin'); exit;
     }
 
@@ -43,12 +53,15 @@ function deleteCommentaire()
 
 function deleteArticle()
 {
-    $article = getById(intval($_GET['id']));
+    require '../model/manager.php';
+    require_once '../model/article-manager.php';
+    $articleManager = new ArticleManager();
+    $article = $articleManager->getArticleById(intval($_GET['id']));
     include '../view/admin/delete-article.html.php';
 
     if(isset($_POST['submit']))
     {
-        $article = deleteArt(intval($_GET['id']));
+        $article = $articleManager->deleteArticle(intval($_GET['id']));
         header('Location: /?controller=admin'); exit;
     }
 

@@ -10,7 +10,7 @@
 <?php endforeach; ?>
 
 
-<a href="/?controller=blog&action=addArticles" class="btn btn-primary">Créer un article</a>
+<a href="/?controller=blog&action=addArticle" class="btn btn-primary">Créer un article</a>
 
 
 <?php include '../view/partials/_bottom.html.php' ?>
