@@ -62,8 +62,8 @@ li
 .blog-prog
 {
     text-decoration: underline;
-    text-decoration-color: #1f1ff5;
-    -moz-text-decoration-color: blue;
+    text-decoration-color: #d4d4d4;
+    -moz-text-decoration-color: rgb(204, 204, 204);
 }
 
 .comments
@@ -104,4 +104,17 @@ p span.content
     font-style: italic;
     font-weight: bolder;
     text-transform: uppercase;
+}
+
+.imagearticle
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.imagearticle img
+{
+    margin-left: 25%;
+    width: 50%;
 }

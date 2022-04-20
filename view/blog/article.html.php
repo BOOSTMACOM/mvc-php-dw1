@@ -1,8 +1,11 @@
 <?php include '../view/partials/_top.html.php' ?>
-<h1 class="text-center text-primary"><?= $article['title'] ?></h1>
-<a class="text-info" href="javascript://" onclick="history.back();">Retourner en arrière</a>
-<p><?= $article['content'] ?></p>
+<a class="text-primary text-right" href="javascript://" onclick="history.back();">Retourner en arrière</a>
+<h1 class="text-center text-secondary"><?= $article['title'] ?></h1>
 
+<div class="imagearticle">
+<img src="<?= $article['image'] ?>" alt="image_explication">
+<p><?= $article['content'] ?></p>
+</div>
 <h2 class="comments">Commentaires</h2>
 <?php foreach($comment as $key) : ?>
 <p><span class="author"><?= $key['author'] ?></span> <span class="creation">(le <?= $key['created_at'] ?>)</span>

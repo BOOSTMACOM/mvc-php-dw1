@@ -5,7 +5,7 @@
 </div>
 <h1 class="text-center blog-prog">Administration</h1>
 <h2 id="gestion-articles">Articles</h2>
-<a class="text-info" href="#gestion-commentaires">Tout les commentaires</a>
+<a class="text-primary" href="#gestion-commentaires">Tout les commentaires</a>
 
 <table class="table table-dark">
     <thead>
@@ -34,7 +34,7 @@
 </table>
 
 <h2 id="gestion-commentaires">Commentaires</h2>
-<a class="text-info" href="#gestion-articles">Tout les articles</a>
+<a class="text-primary" href="#gestion-articles">Tout les articles</a>
 
 <table class="table table-dark">
     <thead>
