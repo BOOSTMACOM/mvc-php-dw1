@@ -1,10 +1,11 @@
 <?php
 
-
-
-function index()
+class Admin
 {
-    require '../model/manager.php';
+
+public function index()
+{
+    require_once '../model/manager.php';
 
     require_once '../model/article-manager.php';
     $articleManager = new ArticleManager();
@@ -17,9 +18,9 @@ function index()
     include '../view/admin/index.html.php';
 }
 
-function update()
+public function update()
 {
-    require '../model/manager.php';
+    require_once '../model/manager.php';
     require_once '../model/article-manager.php';
     $articleManager = new ArticleManager;
     $article = $articleManager->getArticleById($_GET['id']);
@@ -35,9 +36,9 @@ function update()
 }
 
 
-function deleteCommentaire()
+public function deleteCommentaire()
 {
-    require '../model/manager.php';
+    require_once '../model/manager.php';
     require_once '../model/comment-manager.php';
     $commentManager = new CommentManager(); 
     $commentaire = $commentManager->getCommentById(intval($_GET['id']));
@@ -51,9 +52,9 @@ function deleteCommentaire()
 
 }
 
-function deleteArticle()
+public function deleteArticle()
 {
-    require '../model/manager.php';
+    require_once '../model/manager.php';
     require_once '../model/article-manager.php';
     $articleManager = new ArticleManager();
     $article = $articleManager->getArticleById(intval($_GET['id']));
@@ -65,4 +66,5 @@ function deleteArticle()
         header('Location: /?controller=admin'); exit;
     }
 
+}
 }

@@ -3,7 +3,7 @@
 class Manager
 {
 
-    private static ?PDO $pdo = NULL;
+    protected static ?PDO $pdo = NULL;
 
     protected function getPdo()
     {

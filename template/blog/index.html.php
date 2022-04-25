@@ -1,6 +1,3 @@
-<?php include '../view/partials/_top.html.php' ?>
-
-
 <h1 class="text-center blog-prog">Le blogrammation </h1>
 <h2>Tout les articles</h2>
 <?php foreach($articles as $article): ?>
@@ -12,5 +9,3 @@
 
 <a href="/?controller=blog&action=addArticle" class="btn btn-primary">Créer un article</a>
 
-
-<?php include '../view/partials/_bottom.html.php' ?>

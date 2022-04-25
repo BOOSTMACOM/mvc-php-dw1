@@ -1,40 +1,24 @@
 <?php
 
-if(!empty($_GET['controller']))
-{
+if (!empty($_GET['controller'])) {
     $controller = $_GET['controller'];
-}
-else
-{
+} else {
     $controller = 'home';
 }
 
-if(file_exists('../controller/' . $controller . '-controller.php'))
-{
-    require '../controller/' . $controller . '-controller.php';
+if (file_exists('../src/controller/' . $controller . '-controller.php')) {
+    require '../src/controller/' . $controller . '-controller.php';
 
-    if(!empty($_GET['action']))
-    {
-        $action = $_GET['action'];
+    if (!empty($_GET['action'])) {
+        $instanceController = new $controller;
+        $function = $_GET['action'];
+        $action = $instanceController->$function();
+    } else {
+        $instanceController = new $controller;
+        $action = $instanceController->index();
     }
-    else
-    {
-        $action = 'index';
-    }
-
-    if(function_exists($action))
-    {
-        $action(); // index() soit autre
-    }
-    else
-    {
-        header("HTTP/1.1 404 Not Found");
-        echo "Erreur 404 Not Found";
-    }
-
 }
-else
-{
-    header("HTTP/1.1 404 Not Found");
-    echo "Erreur 404 Not Found";
+
+if(method_exists($instanceController, 'render')){
+    $instanceController->render($action);
 }

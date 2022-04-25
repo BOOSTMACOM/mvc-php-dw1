@@ -11,7 +11,7 @@ class ArticleManager extends Manager
         $query = $this->getPdo()->query($sql);
         return $query->fetchAll();
     }
-
+    
     public function getArticleById(int $id)
     {
 
@@ -57,6 +57,18 @@ class ArticleManager extends Manager
         $query->execute([
             'id' => $id,
         ]);
+    }
+
+    public function getArticleByTitle(string $title)
+    {
+
+        $sql = "SELECT * FROM " . self::TABLE . " WHERE title = :title";
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute([
+            'title' => $title,
+        ]);
+
+        return $query->fetch();
     }
 }
 
