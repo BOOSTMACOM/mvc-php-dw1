@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le blogrammation &copy;</title>
+    <title>ORM inspired by &copy;Symfony</title>
 </head>
 <body>
     <header>
@@ -19,7 +19,6 @@
     </main>
 
     <footer>
-        &copy; BARTOLOMUCCI Antony
     </footer>
 </body>
 </html>

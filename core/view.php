@@ -10,7 +10,7 @@ class View{
         $this->layout = $layout;
         $this->data = $data;
     }
-    
+
     public function render($data = []){
 
         extract($this->data);
